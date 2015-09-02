@@ -37,9 +37,9 @@ Item.propTypes = {
     value: React.PropTypes.number.isRequired
 };
 
-Item = connect((state, props) => {
-    console.log("Selecting index " + props.index, state[props.index]);
-    return {value: state[props.index].foo.bar}
+Item = connect((state, componentProps) => {
+    console.log("Selecting index " + componentProps.index, state[componentProps.index]);
+    return {value: state[componentProps.index].foo.bar}
 })(Item);
 
 class App extends React.Component {
