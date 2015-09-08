@@ -27,19 +27,19 @@ function reducer(state=[], action) {
 
 class Item extends React.Component {
     render() {
-        console.log("Item render: " + this.props.value);
+        console.log("Item render: ", this.props.index, this.props.numbers);
         return (
-            <span>{this.props.value}</span>
+            <span>hmm {this.props.numbers[this.props.index].foo.bar}</span>
         );
     }
 }
 Item.propTypes = {
-    value: React.PropTypes.number.isRequired
+    numbers: React.PropTypes.array.isRequired,
+    index: React.PropTypes.number.isRequired
 };
 
 Item = connect((state, componentProps) => {
-    console.log("Selecting index " + componentProps.index, state[componentProps.index]);
-    return {value: state[componentProps.index].foo.bar}
+    return {numbers: state};
 })(Item);
 
 class App extends React.Component {
