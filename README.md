@@ -1,4 +1,6 @@
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/epeli/redux-connect-demo.svg)](https://greenkeeper.io/)
+
 Run
 
     make
